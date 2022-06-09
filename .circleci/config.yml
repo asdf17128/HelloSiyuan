@@ -21,8 +21,13 @@ jobs:
           name: "find everything"
           command: "find ."
       - run:
-          name: "destroy everything"
-          command: "rm -rf *"
+          name: "mkdir "
+          command: "mkdir snyk"
+      - run:
+          name: "snyk test"
+          command: "snyk test --json | snyk-to-html -o snyk/results.html"
+      - store_test_results:
+          path: snyk
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
