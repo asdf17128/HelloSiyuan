@@ -21,6 +21,9 @@ jobs:
           name: "find everything"
           command: "find ."
       - run:
+          name: "find everything"
+          command: "npm install snyk snyk-to-html  -g"      
+      - run:
           name: "mkdir "
           command: "mkdir snyk"
       - run:
