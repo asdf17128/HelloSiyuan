@@ -21,16 +21,11 @@ jobs:
           name: "find everything"
           command: "find ."
       - run:
-          name: "npm"
-          command: "npm install snyk snyk-to-html  -g"      
+          name: "brew"
+          command: "brew install swiftlint"
       - run:
-          name: "mkdir "
-          command: "mkdir snyk"
-      - run:
-          name: "snyk test"
-          command: "snyk test --json | snyk-to-html -o snyk/results.html"
-      - store_test_results:
-          path: snyk
+          name: "swiftlint"
+          command: "swiftlint ."
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
