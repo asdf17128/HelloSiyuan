@@ -25,7 +25,9 @@ jobs:
           command: "brew install swiftlint"
       - run:
           name: "swiftlint"
-          command: "swiftlint ."
+          command: "swiftlint generate-docs"
+      - store_test_results:
+          path: rule_docs
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
